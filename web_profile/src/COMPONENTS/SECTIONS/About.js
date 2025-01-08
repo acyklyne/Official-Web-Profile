@@ -3,7 +3,7 @@ import Card from '../SHARED/Card';
 
 const About = () => {
   return (
-    <section id="about" className="py-20 bg-primary">
+    <section id="about" className="py-20 custom-bg-primary">
       <div className="container mx-auto px-4">
         <h2 className="section-heading">About Me</h2>
         <div className="grid md:grid-cols-2 gap-8">

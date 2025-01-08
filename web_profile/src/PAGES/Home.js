@@ -8,7 +8,7 @@ import Contact from '../COMPONENTS/SECTIONS/Contact';
 
 const Home = () => {
   return (
-    <main className="bg-primary">
+    <main className="custom-bg-primary">
       <Hero />
       <About />
       <Skills />

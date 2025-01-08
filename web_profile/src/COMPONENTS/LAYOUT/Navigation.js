@@ -3,15 +3,14 @@ import { Link } from 'react-router-dom';
 import { Navbar, Container, Nav } from 'react-bootstrap';
 import Button from '../SHARED/Button';
 
-const Navigation = () => {
+const Navigation = ({ darkMode, toggleDarkMode }) => {
   const [expanded, setExpanded] = useState(false);
 
   return (
     <Navbar 
       expand="lg" 
       expanded={expanded}
-      className="fixed w-full z-50"
-      style={{ backgroundColor: 'var(--header-background)' }} // Use custom background color
+      className="custom-navbar fixed w-full z-50"
     >
       <Container>
         <Navbar.Brand as={Link} to="/" className="text-secondary font-bold">
@@ -54,8 +53,11 @@ const Navigation = () => {
             >
               Contact
             </Nav.Link>
+            <Button className="ml-4">Resume</Button>
+            <button className="theme-switch-button ml-4" onClick={toggleDarkMode}>
+              {darkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+            </button>
           </Nav>
-          <Button className="ml-4">Resume</Button>
         </Navbar.Collapse>
       </Container>
     </Navbar>
