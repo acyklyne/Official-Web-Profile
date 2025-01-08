@@ -1,3 +1,17 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+:root {
+  --background-color: #f8f9fa; /* Light mode background */
+  --text-color: #343a40; /* Light mode text */
+}
+
+.dark-mode {
+  --background-color: #121212; /* Dark mode background */
+  --text-color: #ffffff; /* Dark mode text */
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +19,35 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.nav-link {
+  @apply hover:text-secondary transition-colors duration-300;
+  @apply px-4 py-2 rounded-md; /* Add padding and rounded corners */
+  @apply hover:bg-gray-200; /* Add background color on hover */
+}
+
+.section-heading {
+  @apply text-3xl font-bold mb-6 text-textPrimary;
+  @apply border-b-2 border-gray-300 pb-2; /* Add bottom border for emphasis */
+}
+
+.container {
+  @apply max-w-screen-lg mx-auto px-4; /* Center content and add padding */
+}
+
+.button {
+  @apply bg-primary text-white font-semibold py-2 px-4 rounded-md;
+  @apply hover:bg-primary-dark transition-colors duration-300;
+}
+
+@layer components {
+  .bg-primary {
+    @apply bg-blue-500; /* Example primary color */
+  }
+  .bg-primary-dark {
+    @apply bg-blue-700; /* Example darker primary color */
+  }
 }
